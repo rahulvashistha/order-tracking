@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock title %}
+{% block homeactive %} active {% endblock homeactive %}
+{% block body_class %}bghome{% endblock body_class %}
+
+{% block body %}
+<div class="container text-center my-5" id="divhome">
+    <p>
+        <h2 class="display-3">Global Package Tracking!</h2> 
+        <h4>Track Packages Anytime, Anywhere.</h4>
+        <br>
+        <a class="btn btn-primary btn-lg" href="/trackorder" role="button">Track</a>
+    </p>
+</div>
+{% endblock body %}
+

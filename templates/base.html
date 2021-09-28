@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS & Icon-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Static JS for progress bar -->
+    <script src="/static/status.js"></script>
+    <!-- Static CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/ordertracking.css">
+    {% block head %}{% endblock head %}
+<title>{% block title %} {% endblock title %}</title>
+</head>
+<body class="{% block body_class %}{% endblock body_class %}">
+    <div class="navbar-container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand">OrderTracks</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link {% block homeactive %}{% endblock homeactive %}" aria-current="page"
+                                href="/home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled {% block trackorderactive %}{% endblock trackorderactive %}" aria-current="page" aria-disabled="true">Track Your Order</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="/admin/home/order">Add Order</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="/admin/home/update">Update Order</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--Message Functionality-->
+    <!--
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show mb-0" role="alert">
+        <strong>Message: {{ message }}</strong>
+        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    -->
+    {% block body %} {% endblock body %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
